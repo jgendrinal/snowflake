@@ -7,12 +7,6 @@
 setClass("SnowflakeDriver", contains = "DBIDriver")
 
 #' @export
-#' @rdname Snowflake-class
-setMethod("dbUnloadDriver", "SnowflakeDriver", function(drv, ...){
-  TRUE
-})
-
-#' @export
 setMethod("show", "SnowflakeDriver", function(object){
   cat("<SnowflakeDriver>\n")
 })

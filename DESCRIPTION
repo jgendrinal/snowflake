@@ -1,11 +1,17 @@
 Package: snowflake
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Title: An Interface to Snowflake databases
+Version: 0.0.9999
+Authors@R: c(
+    person("Francis", "Endrinal", , "datasalaryman@protonmail.com", c("aut", "cre")))
+Description: Talk to a Snowflake database from R
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    DBI,
+    methods
+Suggests: 
+    DBItest,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

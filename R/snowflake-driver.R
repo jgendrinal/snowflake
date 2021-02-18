@@ -53,3 +53,47 @@ setMethod(
                 password = password,
                 warehouse = warehouse)
           })
+
+#' Snowflake results class
+#'
+#' @export
+setClass(
+  "SnowflakeResult", contains = "DBIResult",
+  slots = list(
+    head = "logical"
+  )
+)
+
+
+#' Send a query to Snowflake
+#'
+#' @export
+setMethod(
+  "dbSendQuery", "SnowflakeConnection",
+  function(conn, statement, head, ...) {
+    new("SnowflakeResult", head = TRUE)
+  }
+)
+
+#' @export
+setMethod("dbClearResult", "SnowflakeResult", function(res, ...) {
+  # free resources
+  TRUE
+})
+
+#' Retrieve records from Kazam query
+#' @export
+setMethod("dbFetch", "SnowflakeResult", function(res, n = -1, ...) {
+  TRUE
+})
+
+#' Find the database data type associated with an R object
+#' @export
+setMethod("dbDataType", "SnowflakeConnection", function(dbObj, obj, ...) {
+  TRUE
+})
+
+#' @export
+setMethod("dbHasCompleted", "SnowflakeResult", function(res, ...) {
+  TRUE
+})

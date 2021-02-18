@@ -13,3 +13,18 @@ setClass("SnowflakeConnection",
       database = "character",
       warehouse = "character"
     ))
+
+setMethod("dbConnect",
+          "SnowflakeConnection",
+          function(drv,
+                   account,
+                   username,
+                   password,
+                   database,
+                   warehouse){
+            new("SnowflakeConnection",
+                account = account,
+                username = username,
+                password = password,
+                warehouse = warehouse)
+})

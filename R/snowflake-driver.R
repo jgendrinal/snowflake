@@ -12,6 +12,7 @@ setMethod("dbUnloadDriver", "SnowflakeDriver", function(drv, ...){
   TRUE
 })
 
+#' @export
 setMethod("show", "SnowflakeDriver", function(object){
   cat("<SnowflakeDriver>\n")
 })
